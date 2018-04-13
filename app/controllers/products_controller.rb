@@ -10,7 +10,6 @@ class ProductsController < ApplicationController
     json_response(@product)
   end
 
-
   def create
     @product = Product.create! products_params
     json_response(@product, :created) 
@@ -34,7 +33,7 @@ class ProductsController < ApplicationController
   end
 
   def products_params
-    params.permit(:name, :description, :price, :image_url)
+    params.permit(:name, :description, :price, :image_url, :main_image)
   end
 
 end
